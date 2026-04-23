@@ -1,0 +1,23 @@
+<app-header></app-header>
+<main>
+    <ul id="users">
+        @for (user of users; track user.id) {
+            <li>
+               <!-- Older approach (Decorator based Input properties for single input property)--> 
+                <!-- <app-user [id]="user.id" [selected]="user.id===selectedUserId" [avatar]="user.avatar" [name]="user.name" (select)="onSelectUser($event)"></app-user> -->
+
+                <!-- Newer approach (Interface obj based Input properties for single object) -->
+                <app-user
+                    [user]="{ id: user.id, avatar: user.avatar, name: user.name, selected: user.id === selectedUserId }"
+                    (select)="onSelectUser($event)"> <!--This $event special variable which use to hold emitted value. $event is not special data by itself—it’s just “whatever the child component emitted” for that event.-->
+                </app-user> 
+            </li>
+        } 
+    </ul>
+    @if (selectedUserId ) {
+        <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name"></app-tasks>
+    }
+    @else {
+        <p id="fallback">Please select a user to see their tasks !</p>
+    }
+</main>

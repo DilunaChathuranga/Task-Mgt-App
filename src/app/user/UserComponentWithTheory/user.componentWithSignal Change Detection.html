@@ -1,0 +1,8 @@
+<div>
+    <button (click)="onSelectUser()"> <!--Event Binding / change detection-->
+        <!-- <img [src]="'assets/users/'+selectedUser.avatar" [alt]="selectedUser.name" />  Method 1 with Property Binding-->
+        <img [src]="imagePath()" [alt]="selectedUser().name"/> <!--Method 2 with Property Binding more cleaner approach-->
+        <!-- <img src="{{imagePath}}" alt="{{selectedUser.name}}"/> Method 3 with String Interpolation-->
+        <span>{{selectedUser().name}}</span> <!--String interpolation--> <!--Signal are consider as function-->
+    </button>
+</div>
