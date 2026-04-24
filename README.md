@@ -1,6 +1,6 @@
 # Task-Mgt-App
 
-Angular based task management application (Angular 19, standalone components based project).
+Angular based task management application (Angular 19, standalone components based project @@@).
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.1.
 
